@@ -1,0 +1,58 @@
+body{
+    background-image: url(../images/Background.jpg);
+    background-repeat: no-repeat;
+    
+    
+    
+}
+.o-big-one {
+  display: flex;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.o-images {
+  margin-top: 3rem;
+  margin-left: 1rem;
+  width: 30%;
+}
+.o-images li {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.o-thumbnail {
+  width: 300px;
+}
+.o-thumbnail img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  border-radius: 2rem;
+}
+.o-bar {
+  text-align: center;
+  margin:2rem;
+  
+}
+.search-label input{
+    width: 500px;
+    height: 40px;
+    border-radius: 1rem;
+    border: 2px solid gray;
+    font-size: 20px;
+    text-align: center;
+
+}
+.search-label button{
+
+    height: 40px;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    border: 2px solid gray;
+    font-size: 20px;
+}
+
