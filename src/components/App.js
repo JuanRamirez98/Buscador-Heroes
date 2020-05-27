@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "../components/App.css";
 import { MD5 } from "../components/MD5";
+import { createPortal } from "react-dom";
 
 /* 
 let ts = Date.now();
@@ -86,6 +87,18 @@ export default class FetchHero extends React.Component {
                 <img
                   src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
                 />
+                {hero.comics.items.map((comic) => {
+                  return (
+                    <div className="o-link">
+                      
+                      
+                      <a className="link" href={comic.resourceURI}>
+                        {" "}
+                        {comic.name}
+                      </a>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
