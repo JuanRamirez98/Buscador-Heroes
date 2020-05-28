@@ -1,9 +1,6 @@
-body{
-    background-image: url(../images/Background.jpg);
-    background-repeat: no-repeat;
-    
-    
-    
+body {
+  background-image: url(../images/Background.jpg);
+  background-repeat: no-repeat;
 }
 .o-big-one {
   display: flex;
@@ -15,12 +12,15 @@ body{
 }
 
 .o-images {
+  margin-right: 2rem;
   margin-top: 3rem;
-  margin-left: 1rem;
   width: 30%;
+  height: auto;
+  box-shadow: 3px 3px 3px 3px #9e9e9e;
+  border-radius: 1.5rem;
 }
 .o-images li {
-  font-size: 14px;
+  font-size: 7px;
   font-weight: bold;
 }
 
@@ -30,38 +30,59 @@ body{
 .o-thumbnail img {
   width: 100%;
   height: 320px;
-  object-fit: contain;
-  border-radius: 2rem;
 }
 .o-bar {
   text-align: center;
-  margin:2rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
   
-}
-.search-label input{
-    width: 500px;
-    height: 40px;
-    border-radius: 1rem;
-    border: 2px solid gray;
-    font-size: 20px;
-    text-align: center;
 
 }
-.search-label button{
 
-    height: 40px;
-    margin-left: 1rem;
-    border-radius: 1rem;
-    border: 2px solid gray;
-    font-size: 20px;
-}
-.o-link{
-  font-family: roboto;
+.search-label input {
+  width: 500px;
+  height: 40px;
+  border-radius: 1rem;
+  border: 2px solid gray;
   font-size: 20px;
- 
+  text-align: center;
+  outline: none;
 }
-.o-link a{
+.search-label button {
+  height: 40px;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  border: 2px solid gray;
+  font-size: 20px;
+  outline: none;
+}
+.o-link {
+  font-family: roboto;
+  margin-left: 1rem;
+}
+.o-link a {
   color: black;
+  font-size: 11.8px;
+}
+
+.o-list {
+  display: flex;
+  border-radius: 2rem;
+  width: 100%;
+}
+.o-name {
+  margin-left: 1rem;
+}
+.o-icon{
  
+  display: flex;
+  align-items: flex-start;
+  margin-right: 3rem;
+  margin-top: -3rem;
+}
+.o-icon img{
+  width: 200px;
 }
 

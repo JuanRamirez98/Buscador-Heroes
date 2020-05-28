@@ -3,13 +3,14 @@ import axios from "axios";
 import "../components/App.css";
 import { MD5 } from "../components/MD5";
 import { createPortal } from "react-dom";
+import Hero from "../components/Hero/Hero";
 
 /* 
 let ts = Date.now();
 const publicKey = "885d1840d7317b9714d75ddf95394c91";
  */
 
-var url = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=hulk&apikey=885d1840d7317b9714d75ddf95394c91&ts=1589417013197&hash=010ae61dd7043c0aa0c1b9e5d8311b05`;
+var url = `https://gateway.marvel.com/v1/public/characters?&apikey=885d1840d7317b9714d75ddf95394c91&ts=1589417013197&hash=010ae61dd7043c0aa0c1b9e5d8311b05`;
 var search = "";
 export default class FetchHero extends React.Component {
   constructor() {
@@ -60,6 +61,10 @@ export default class FetchHero extends React.Component {
     return (
       <div className="o-father">
         <div className="o-bar">
+          <div className="o-icon">
+            <img src="/marvel.png" />
+          </div>
+
           <label className="search-label" htmlFor="search-input">
             <input
               type="text"
@@ -67,13 +72,13 @@ export default class FetchHero extends React.Component {
               id="search-input"
               placeholder="Search a hero..."
             />
-            <button onClick={this.updateInfo}>buscar</button>
+            <button onClick={this.updateInfo}>Search</button>
             <button
               onClick={() => {
                 this.clear([]);
               }}
             >
-              Limpiar
+              Clean
             </button>
 
             <i className="fa fa-search search-icon" />
@@ -82,20 +87,28 @@ export default class FetchHero extends React.Component {
         <ul className="o-big-one">
           {this.state.data.map((hero) => (
             <div className="o-images">
-              <li>{hero.name}</li>
+              <li className="o-name">
+                <Hero name={hero.name} />
+              </li>
               <div className="o-thumbnail">
-                <img
-                  src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+                <Hero
+                  img={
+                    <img
+                      src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+                    />
+                  }
                 />
+
                 {hero.comics.items.map((comic) => {
                   return (
                     <div className="o-link">
-                      
-                      
-                      <a className="link" href={comic.resourceURI}>
-                        {" "}
-                        {comic.name}
-                      </a>
+                      <Hero
+                        comic={
+                          <a className="link" href={comic.resourceURI}>
+                            {comic.name}
+                          </a>
+                        }
+                      />
                     </div>
                   );
                 })}
